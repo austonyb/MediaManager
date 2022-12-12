@@ -8,7 +8,12 @@
 import CoreData
 
 class MediaItemController {
+    
     static let shared = MediaItemController()
+    
+    private init() {
+        fetchMediaItems()
+    }
     
     var mediaItems: [MediaItem] = []
     var favorites: [MediaItem] = []

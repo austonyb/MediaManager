@@ -17,6 +17,7 @@
 		B9E80371294792E100186E8E /* MediaItem+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E80370294792E100186E8E /* MediaItem+Convenience.swift */; };
 		B9E803732947940500186E8E /* MediaItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E803722947940500186E8E /* MediaItemController.swift */; };
 		B9E803752947978200186E8E /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E803742947978200186E8E /* HomeTableViewController.swift */; };
+		B9E8037729479AD900186E8E /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E8037629479AD900186E8E /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B9E80370294792E100186E8E /* MediaItem+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MediaItem+Convenience.swift"; sourceTree = "<group>"; };
 		B9E803722947940500186E8E /* MediaItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemController.swift; sourceTree = "<group>"; };
 		B9E803742947978200186E8E /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		B9E8037629479AD900186E8E /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E803742947978200186E8E /* HomeTableViewController.swift */,
+				B9E8037629479AD900186E8E /* AddItemViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				B9E8035229478E5700186E8E /* AppDelegate.swift in Sources */,
 				B9E8035429478E5700186E8E /* SceneDelegate.swift in Sources */,
 				B9E803752947978200186E8E /* HomeTableViewController.swift in Sources */,
+				B9E8037729479AD900186E8E /* AddItemViewController.swift in Sources */,
 				B9E8036F2947908F00186E8E /* CoreDataStack.swift in Sources */,
 				B9E80371294792E100186E8E /* MediaItem+Convenience.swift in Sources */,
 			);

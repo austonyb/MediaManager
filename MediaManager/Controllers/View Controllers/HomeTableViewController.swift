@@ -9,14 +9,13 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+   //MARK: - Lifecycle Methods
+    
+    override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+       for item in MediaItemController.shared.mediaItems {
+          print(item.title)
+       }
     }
 
     // MARK: - Table view data source
