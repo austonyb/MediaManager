@@ -8,11 +8,8 @@
 import UIKit
 
 class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-   
-
     
-    
-    //MARK: - Outlets
+    // MARK: Outlets
     @IBOutlet weak var movieCheckboxButton: UIButton!
     @IBOutlet weak var tvShowCheckboxButton: UIButton!
     @IBOutlet weak var titleTextField: UITextField!
@@ -20,32 +17,27 @@ class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var ratingSlider: UISlider!
     @IBOutlet weak var isFavoriteSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var isWatchedSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var wasWatchedSegmentedControl: UISegmentedControl!
     @IBOutlet weak var descriptionTextView: UITextView!
     
-
-    //MARK: - Properties
-    var yearPickerValue: Int = Calendar.current.component(.year, from: Date())
+    
+    // MARK: Properties
+    var yearPickerValue = Calendar.current.component(.year, from: Date())
     var isMovie = true
     var ratingValue = 10.0
     var isFavorite = true
     var wasWatched = true
     
-    
-    
-    //MARK: - Lifecycle Methods
+    // MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //make sure that the AddItemViewController sets itself as the delegate and dateSource for the yearPicker. Set this in the viewDidLoad lifecycle method (below)
-        
+
         self.yearPicker.delegate = self
         self.yearPicker.dataSource = self
         self.tvShowCheckboxButton.imageView?.image = UIImage(systemName: "square")
     }
     
-    
-    //MARK: - Delegate Methods
+    // MARK: Delegate Methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -64,19 +56,7 @@ class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         yearPickerValue = Calendar.current.component(.year, from: Date()) - row
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    //MARK: - Actions
-    
+    // MARK: Actions
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let title = titleTextField.text,
               let mediaType = isMovie ? "Movie" : "TV Show",
@@ -120,13 +100,10 @@ class AddItemViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             wasWatched = false
         }
     }
-    
-    
-
 }
 
 extension Double {
-    func roundTo(places: Int) -> Double {
+    func roundTo(places:Int) -> Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }

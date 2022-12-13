@@ -1,55 +1,44 @@
 //
-//  HomeTableViewController.swift
+//  MediaItemTableViewController.swift
 //  MediaManager
 //
-//  Created by Auston Youngblood on 12/12/22.
+//  Created by Auston Youngblood on 12/13/22.
 //
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class MediaItemTableViewController: UITableViewController {
 
-   //MARK: - Lifecycle Methods
+    var items: [MediaItem] = []
     
-    override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-//       for item in MediaItemController.shared.mediaItems {
-//          print(item.title)
-//       }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return items.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mediaItemCell", for: indexPath)
+
+        let item = items[indexPath.row]
+
+        cell.textLabel?.text = item.title
+        cell.detailTextLabel?.text = String(item.rating)
         
-        if indexPath.row == 0 {
-            cell.textLabel?.text = "Favorites"
-        } else if indexPath.row == 1 {
-            cell.textLabel?.text = "Movies"
-        } else {
-            cell.textLabel?.text = "TV Shows"
-        }
         return cell
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,15 +75,14 @@ class HomeTableViewController: UITableViewController {
     }
     */
 
-
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toMediaItemVC" {
-            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let destination = segue.destination as! MediaItemTableViewController
-            destination.items = MediaItemController.shared.sections[indexPath.row]
-        }
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }

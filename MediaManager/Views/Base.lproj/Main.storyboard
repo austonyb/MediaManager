@@ -33,6 +33,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="sOE-bm-4Lm" kind="show" identifier="toMediaItemVC" id="8ZL-Sp-ctI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -243,22 +246,64 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextView" destination="hYZ-we-MVk" id="7AT-ez-Vdc"/>
-                        <outlet property="isFavorite" destination="D78-3m-zrI" id="b3v-EE-N3v"/>
                         <outlet property="isFavoriteSegmentedControl" destination="D78-3m-zrI" id="mzG-qk-xps"/>
-                        <outlet property="isWatched" destination="w0p-8O-hYs" id="4Qg-ZK-gdr"/>
-                        <outlet property="isWatchedSegmentedControl" destination="w0p-8O-hYs" id="goB-yu-0Je"/>
-                        <outlet property="movieCheckboxButton" destination="8BY-ak-MlC" id="lR9-IS-wkc"/>
+                        <outlet property="movieCheckboxButton" destination="8BY-ak-MlC" id="mUH-MH-mF6"/>
                         <outlet property="ratingLabel" destination="C3h-7n-gPL" id="7v4-vp-QOF"/>
                         <outlet property="ratingSlider" destination="bbF-co-Efs" id="RQF-sA-XZJ"/>
-                        <outlet property="titleTextField" destination="8Cd-dD-Ppn" id="xbc-ao-0Kw"/>
-                        <outlet property="tvShowCheckboxButton" destination="18y-48-1Op" id="Reg-ck-duV"/>
+                        <outlet property="titleTextField" destination="8Cd-dD-Ppn" id="8hx-hz-1nf"/>
+                        <outlet property="tvShowCheckboxButton" destination="18y-48-1Op" id="jt7-MW-vGe"/>
                         <outlet property="wasWatchedSegmentedControl" destination="w0p-8O-hYs" id="hg2-FA-zHu"/>
-                        <outlet property="yearPicker" destination="C9g-wg-qSp" id="Be8-bW-wYW"/>
+                        <outlet property="yearPicker" destination="C9g-wg-qSp" id="aSx-Kd-3SA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tp1-lV-OEV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210" y="-11"/>
+            <point key="canvasLocation" x="1358" y="-441"/>
+        </scene>
+        <!--Media Item Table View Controller-->
+        <scene sceneID="jS9-Nc-Wat">
+            <objects>
+                <tableViewController id="sOE-bm-4Lm" customClass="MediaItemTableViewController" customModule="MediaManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="wLW-KC-Edf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mediaItemCell" textLabel="mbw-rV-utF" detailTextLabel="9Rg-34-ndT" style="IBUITableViewCellStyleValue1" id="iKJ-jd-C8Q">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iKJ-jd-C8Q" id="GEG-2D-Xhd">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mbw-rV-utF">
+                                            <rect key="frame" x="20" y="15" width="25" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Rg-34-ndT">
+                                            <rect key="frame" x="340.33333333333331" y="15" width="32.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sOE-bm-4Lm" id="xz2-4z-qbt"/>
+                            <outlet property="delegate" destination="sOE-bm-4Lm" id="qIb-nb-04W"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Nby-HM-xYV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXs-0j-43z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1356" y="275"/>
         </scene>
     </scenes>
     <resources>
