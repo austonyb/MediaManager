@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B95FA75429490927001A3B5C /* MediaItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95FA75329490927001A3B5C /* MediaItemTableViewController.swift */; };
+		B98304DE294A4AC2009D23DA /* MediaItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98304DD294A4AC2009D23DA /* MediaItemDetailViewController.swift */; };
 		B9E8035229478E5700186E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E8035129478E5700186E8E /* AppDelegate.swift */; };
 		B9E8035429478E5700186E8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E8035329478E5700186E8E /* SceneDelegate.swift */; };
 		B9E8035929478E5700186E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E8035729478E5700186E8E /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		B95FA75329490927001A3B5C /* MediaItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemTableViewController.swift; sourceTree = "<group>"; };
+		B98304DD294A4AC2009D23DA /* MediaItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemDetailViewController.swift; sourceTree = "<group>"; };
 		B9E8034E29478E5700186E8E /* MediaManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E8035129478E5700186E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E8035329478E5700186E8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				B9E803742947978200186E8E /* HomeTableViewController.swift */,
 				B9E8037629479AD900186E8E /* AddItemViewController.swift */,
 				B95FA75329490927001A3B5C /* MediaItemTableViewController.swift */,
+				B98304DD294A4AC2009D23DA /* MediaItemDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E8035C29478E5700186E8E /* MediaManager.xcdatamodeld in Sources */,
+				B98304DE294A4AC2009D23DA /* MediaItemDetailViewController.swift in Sources */,
 				B9E803732947940500186E8E /* MediaItemController.swift in Sources */,
 				B9E8035229478E5700186E8E /* AppDelegate.swift in Sources */,
 				B95FA75429490927001A3B5C /* MediaItemTableViewController.swift in Sources */,

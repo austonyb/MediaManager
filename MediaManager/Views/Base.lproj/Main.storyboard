@@ -292,6 +292,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="33X-ug-8kB" kind="show" identifier="toMediaItemDetailVC" id="xYX-T4-bx4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -304,6 +307,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXs-0j-43z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1356" y="275"/>
+        </scene>
+        <!--Media Item Detail View Controller-->
+        <scene sceneID="uy3-84-hHD">
+            <objects>
+                <viewController id="33X-ug-8kB" customClass="MediaItemDetailViewController" customModule="MediaManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8WP-xa-kgV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Imm-9D-h3g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BG4-e9-g7H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1GB-JN-cLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2172" y="275"/>
         </scene>
     </scenes>
     <resources>
