@@ -74,15 +74,24 @@ class MediaItemTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
+    
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toMediaItemDetailVC" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let destination = segue.destination as! MediaItemDetailViewController
+            destination.delegate = self
+            destination.mediaItem = items[indexPath.row]
+        }
     }
-    */
+}
 
+extension MediaItemTableViewController: DeleteItemDelegate {
+    func deleteItem(mediaItem: MediaItem) {
+        guard let index = items.firstIndex(of: mediaItem) else { return }
+        items.remove(at: index)
+        tableView.reloadData()
+    }
 }

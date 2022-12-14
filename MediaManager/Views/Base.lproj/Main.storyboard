@@ -349,6 +349,9 @@
                                 <rect key="frame" x="16" y="616" width="361" height="34.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add To Favorites"/>
+                                <connections>
+                                    <action selector="addToFavoritesButtonTapped:" destination="33X-ug-8kB" eventType="touchUpInside" id="VRc-36-yeR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBc-gB-XPc">
                                 <rect key="frame" x="16" y="666.66666666666663" width="361" height="34.333333333333371"/>
@@ -359,6 +362,9 @@
                                 <rect key="frame" x="16" y="717" width="361" height="34.666666666666629"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Mark As Watched"/>
+                                <connections>
+                                    <action selector="markAsWatchedButtonTapped:" destination="33X-ug-8kB" eventType="touchUpInside" id="PLx-0f-hoD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mxl-Nq-jUp">
                                 <rect key="frame" x="16" y="767.66666666666663" width="361" height="34.333333333333371"/>
@@ -366,6 +372,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Delete (Movie/Show)">
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteMediaItemButtonTapped:" destination="33X-ug-8kB" eventType="touchUpInside" id="f69-mR-RYU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CdK-EI-b4L"/>
@@ -398,7 +407,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BG4-e9-g7H">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="WvL-u2-hwy"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="WvL-u2-hwy">
+                            <connections>
+                                <segue destination="LIo-5c-upq" kind="show" identifier="toEditItemVC" id="MtK-8B-ISy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addToFavoritesButton" destination="IYC-4h-4Nw" id="FpV-ZE-yZN"/>
@@ -414,6 +427,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1GB-JN-cLD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2054" y="275"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="f4O-LO-C0P">
+            <objects>
+                <viewController id="LIo-5c-upq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="faY-Vu-UO9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Nzf-JO-mXf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bdj-PA-Lmr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n1u-eD-mAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2738" y="275"/>
         </scene>
     </scenes>
     <resources>

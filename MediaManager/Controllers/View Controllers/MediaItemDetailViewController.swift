@@ -7,6 +7,11 @@
 
 import UIKit
 
+// MARK: - Protocols
+protocol DeleteItemDelegate: AnyObject {
+    func deleteItem(mediaItem: MediaItem)
+}
+
 class MediaItemDetailViewController: UIViewController {
     
     //MARK: - Outlets
@@ -22,10 +27,12 @@ class MediaItemDetailViewController: UIViewController {
     
     //MARK: - Properties
     var mediaItem: MediaItem?
+    weak var delegate: DeleteItemDelegate?
     
     //MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
 
         // Do any additional setup after loading the view.
     }
@@ -61,7 +68,50 @@ class MediaItemDetailViewController: UIViewController {
         }
     }
     
-
+    //MARK: - Actions
+    
+    @IBAction func addToFavoritesButtonTapped(_ sender: Any) {
+        guard let mediaItem = mediaItem else {
+            return
+        }
+        
+        mediaItem.isFavorite = !mediaItem.isFavorite
+        MediaItemController.shared.updateMediaItem()
+        if mediaItem.isFavorite {
+            DispatchQueue.main.async {
+                self.addToFavoritesButton.setTitle("Remove From Favorites", for: .normal)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.addToFavoritesButton.setTitle("Add To Favorites", for: .normal)
+            }
+        }
+    }
+    
+    @IBAction func markAsWatchedButtonTapped(_ sender: Any) {
+        guard let mediaItem = mediaItem else {
+            return
+        }
+        
+        mediaItem.wasWatched = !mediaItem.wasWatched
+        MediaItemController.shared.updateMediaItem()
+        if mediaItem.wasWatched {
+            self.markAsWatchedButton.setTitle("Mark As Unwatched", for: .normal)
+        } else {
+            self.markAsWatchedButton.setTitle("Mark As Watched", for: .normal)
+        }
+    }
+    
+    
+    @IBAction func deleteMediaItemButtonTapped(_ sender: Any) {
+        guard let mediaItem = mediaItem else {
+            return
+        }
+        MediaItemController.shared.deleteMediaItem(mediaItem)
+        delegate?.deleteItem(mediaItem: mediaItem)
+        navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
