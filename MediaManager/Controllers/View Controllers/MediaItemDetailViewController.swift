@@ -112,14 +112,32 @@ class MediaItemDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let mediaItem = mediaItem else { return }
+        if segue.identifier == "toEditItemVC" {
+            let destination = segue.destination as! EditItemViewController
+            destination.delegate = self
+            destination.mediaItem = mediaItem
+        } else { return }
     }
-    */
+}
 
+extension MediaItemDetailViewController: EditDetailDelegate {
+    func mediaItemEdited(title: String, rating: Double, year: Int, description: String) {
+        
+        guard let mediaItem = self.mediaItem else { return }
+        mediaItem.title = title
+        mediaItem.rating = rating
+        mediaItem.year = Int64(year)
+        mediaItem.itemDescription = description
+        
+        MediaItemController.shared.updateMediaItem()
+        
+        setupViews()
+    }
+    
+    
 }
