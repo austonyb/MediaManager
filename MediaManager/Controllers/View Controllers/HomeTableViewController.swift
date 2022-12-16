@@ -13,9 +13,21 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(reminderFired), name: Notification.Name(rawValue: "mediaReminderNotification"), object: nil)
 //       for item in MediaItemController.shared.mediaItems {
 //          print(item.title)
 //       }
+    }
+    
+    //MARK: - Methods
+    @objc func reminderFired() {
+        DispatchQueue.main.async {
+           self.tableView.backgroundColor = .red
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+           self.tableView.backgroundColor = .systemBackground
+           self.view.backgroundColor = .systemBackground
+        }
     }
 
     // MARK: - Table view data source
