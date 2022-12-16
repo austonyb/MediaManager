@@ -121,7 +121,11 @@ class MediaItemDetailViewController: UIViewController {
             let destination = segue.destination as! EditItemViewController
             destination.delegate = self
             destination.mediaItem = mediaItem
-        } else { return }
+        } else if segue.identifier == "toReminderView" {
+            let destination = segue.destination as! DatePickerViewController
+            destination.delegate = self
+            destination.date = mediaItem.reminderDate
+        }
     }
 }
 
@@ -137,6 +141,15 @@ extension MediaItemDetailViewController: EditDetailDelegate {
         MediaItemController.shared.updateMediaItem()
         
         setupViews()
+    }
+}
+
+extension MediaItemDetailViewController: DatePickerDelegate {
+    func reminderDateEdited(date: Date) {
+        guard let mediaItem = self.mediaItem else { return }
+        mediaItem.reminderDate = date
+        addWatchReminderButton.setTitle("Edit Watch Reminder", for: .normal)
+        MediaItemController.shared.updateMediaItemReminderDate(mediaItem)
     }
     
     

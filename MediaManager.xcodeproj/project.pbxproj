@@ -10,6 +10,8 @@
 		B95FA75429490927001A3B5C /* MediaItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95FA75329490927001A3B5C /* MediaItemTableViewController.swift */; };
 		B98304DE294A4AC2009D23DA /* MediaItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98304DD294A4AC2009D23DA /* MediaItemDetailViewController.swift */; };
 		B98304E0294A8A86009D23DA /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98304DF294A8A86009D23DA /* EditItemViewController.swift */; };
+		B98304E2294CE5A0009D23DA /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98304E1294CE5A0009D23DA /* DatePickerViewController.swift */; };
+		B98304E4294CED25009D23DA /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98304E3294CED25009D23DA /* NotificationScheduler.swift */; };
 		B9E8035229478E5700186E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E8035129478E5700186E8E /* AppDelegate.swift */; };
 		B9E8035429478E5700186E8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E8035329478E5700186E8E /* SceneDelegate.swift */; };
 		B9E8035929478E5700186E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E8035729478E5700186E8E /* Main.storyboard */; };
@@ -27,6 +29,8 @@
 		B95FA75329490927001A3B5C /* MediaItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemTableViewController.swift; sourceTree = "<group>"; };
 		B98304DD294A4AC2009D23DA /* MediaItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItemDetailViewController.swift; sourceTree = "<group>"; };
 		B98304DF294A8A86009D23DA /* EditItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
+		B98304E1294CE5A0009D23DA /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		B98304E3294CED25009D23DA /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		B9E8034E29478E5700186E8E /* MediaManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E8035129478E5700186E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E8035329478E5700186E8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 				B95FA75329490927001A3B5C /* MediaItemTableViewController.swift */,
 				B98304DD294A4AC2009D23DA /* MediaItemDetailViewController.swift */,
 				B98304DF294A8A86009D23DA /* EditItemViewController.swift */,
+				B98304E1294CE5A0009D23DA /* DatePickerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 				B9E8035D29478E5800186E8E /* Assets.xcassets */,
 				B9E8035F29478E5800186E8E /* LaunchScreen.storyboard */,
 				B9E8036229478E5800186E8E /* Info.plist */,
+				B98304E3294CED25009D23DA /* NotificationScheduler.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -218,9 +224,11 @@
 				B95FA75429490927001A3B5C /* MediaItemTableViewController.swift in Sources */,
 				B9E8035429478E5700186E8E /* SceneDelegate.swift in Sources */,
 				B9E803752947978200186E8E /* HomeTableViewController.swift in Sources */,
+				B98304E2294CE5A0009D23DA /* DatePickerViewController.swift in Sources */,
 				B9E8037729479AD900186E8E /* AddItemViewController.swift in Sources */,
 				B9E8036F2947908F00186E8E /* CoreDataStack.swift in Sources */,
 				B9E80371294792E100186E8E /* MediaItem+Convenience.swift in Sources */,
+				B98304E4294CED25009D23DA /* NotificationScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

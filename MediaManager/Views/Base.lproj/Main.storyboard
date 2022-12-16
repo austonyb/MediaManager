@@ -357,6 +357,9 @@
                                 <rect key="frame" x="16" y="666.66666666666663" width="361" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Add Watch Reminder"/>
+                                <connections>
+                                    <segue destination="2fB-kd-Q5v" kind="show" identifier="toReminderView" id="jKo-x7-mMd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu7-IM-SBa">
                                 <rect key="frame" x="16" y="717" width="361" height="34.666666666666629"/>
@@ -542,6 +545,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CF-KU-yTk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2750" y="275"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="6sx-Jw-RQC">
+            <objects>
+                <viewController id="2fB-kd-Q5v" customClass="DatePickerViewController" customModule="MediaManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CoI-ro-Sba">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="0iq-zk-Y0V">
+                                <rect key="frame" x="-656" y="443" width="1705" height="35"/>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="2fB-kd-Q5v" eventType="valueChanged" id="8h1-e0-X0f"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gb2-b3-5ZI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0iq-zk-Y0V" firstAttribute="centerX" secondItem="Gb2-b3-5ZI" secondAttribute="centerX" id="6Nq-Yu-yYE"/>
+                            <constraint firstItem="0iq-zk-Y0V" firstAttribute="centerY" secondItem="Gb2-b3-5ZI" secondAttribute="centerY" id="SKq-N2-gcE"/>
+                            <constraint firstItem="0iq-zk-Y0V" firstAttribute="width" secondItem="CoI-ro-Sba" secondAttribute="height" multiplier="2:1" id="Uff-BX-wjn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7r9-Lo-Jf5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9tl-hg-z2T">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="2fB-kd-Q5v" id="DUU-RN-IS6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="0iq-zk-Y0V" id="OgM-86-BRb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASg-PA-cuC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2052.6717557251909" y="998.59154929577471"/>
         </scene>
     </scenes>
     <resources>
